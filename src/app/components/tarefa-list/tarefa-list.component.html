@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Lista de Tarefas</h2>
+
+  <div class="input-group">
+    <input id="novaTarefa" type="text" [formControl]="novaTarefa" placeholder="Digite uma nova tarefa" />
+    <button class="btn" (click)="adicionar()">Adicionar</button>
+  </div>
+
+  <ul class="lista-tarefas">
+    <li *ngFor="let t of tarefas" class="tarefa-item">
+      <span [style.textDecoration]="t.concluida ? 'line-through' : 'none'" class="descricao">
+        {{ t.descricao }}
+      </span>
+      <mat-slide-toggle [checked]="t.concluida" (change)="alternarStatus(t)">
+        {{ t.concluida ? 'Concluída' : 'Pendente' }}
+      </mat-slide-toggle>
+      <button class="btn-remover" (click)="remover(t.id!)">Remover</button>
+    </li>
+  </ul>
+</div>
