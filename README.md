@@ -57,3 +57,22 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Docker
+
+A aplicação é empacotada com Docker utilizando **multi-stage build**, sendo servida por **Nginx**.
+
+---
+
+## 📦 Como construir a imagem Docker
+
+Execute o comando abaixo na raiz do projeto:
+
+```bash
+docker build -t danielteotonio/tarefas-front .
+```
+
+▶️ Como executar a imagem
+```bash
+docker run -d -p 4000:80 danielteotonio/tarefas-front
+```
